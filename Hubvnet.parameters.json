@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "value": "LL-Demo-Hubvnet"
+    },
+    "vnetAddressPrefix": {
+      "value": "10.0.0.0/24"
+    },
+    "gatewaysubnetprefix": {
+      "value": "10.0.0.0/26"
+    },
+    "gatewaysubnetname": {
+      "value": "GatewaySubnet"
+    },
+    "routeserversubnetname": {
+      "value": "RouteServerSubnet"
+    },
+    "routeserversubnetprefix": {
+      "value": "10.0.0.64/26"
+    },
+    "inboundsubnetname": {
+      "value": "InboundSubnet"
+    },
+    "inboundprefix": {
+      "value": "10.0.0.128/28"
+    },
+    "ouboundsubnetname": {
+      "value": "OutboundSubnet"
+    },
+    "outboundprefix": {
+      "value": "10.0.0.144/28"
+    }
+  }
+}
