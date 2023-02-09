@@ -7,8 +7,8 @@ New-AzResourceGroup @rg
 #Hub Virtual Network
 
 $vnet01 = @{
-    Name = lldemohubvnet
-    ResourceGroupName = $rg
+    Name = 'lldemohubvnet'
+    ResourceGroupName = 'LL-Demo-RG'
     Location = 'EastUS2'
     AddressPrefix = 10.0.0.0/24
 }
@@ -53,10 +53,10 @@ $HubVirtualNetwork | Set-AzVirtualNetwork
 
 #Spoke Virtual Network 1
 $vnet02 = @{
-    Name = lldemovnet01
-    ResourceGroupName = $rg
+    Name = 'lldemovnet01'
+    ResourceGroupName = 'LL-Demo-RG'
     Location = 'EastUS2'
-    AddressPrefix = 10.0.1.0/24
+    AddressPrefix = '10.0.1.0/24'
 }
 
 $Spoke01VirtualNetwork = New-AzVirtualNetwork @vnet02
@@ -81,10 +81,10 @@ $Spoke01VirtualNetwork | Set-AzVirtualNetwork
 
 #Spoke Virtual Network 2
 $vnet03 = @{
-    Name = lldemovnet02
-    ResourceGroupName = $rg
+    Name = 'lldemovnet02'
+    ResourceGroupName = 'LL-Demo-RG'
     Location = 'EastUS2'
-    AddressPrefix = 10.0.2.0/24
+    AddressPrefix = '10.0.2.0/24'
 }
 
 $Spoke02VirtualNetwork = New-AzVirtualNetwork @vnet03
@@ -92,7 +92,7 @@ $Spoke02VirtualNetwork = New-AzVirtualNetwork @vnet03
 $subnet07 = @{
     Name = 'WebSubnet02'
     VirtualNetwork = $Spoke02VirtualNetwork
-    AddressPrefix = '10.0.1.0/26'
+    AddressPrefix = '10.0.2.0/26'
 }
 $subnetConfig07 = Add-AzVirtualNetworkSubnetConfig @subnet07
 
@@ -109,10 +109,10 @@ $Spoke02VirtualNetwork | Set-AzVirtualNetwork
 
 #On Prem Virtual Network
 $vnet04 = @{
-    Name = lldemoonpremvnet
-    ResourceGroupName = $rg
+    Name = 'lldemoonpremvnet'
+    ResourceGroupName = 'LL-Demo-RG'
     Location = 'EastUS2'
-    AddressPrefix = 192.168.0.0/24
+    AddressPrefix = '192.168.0.0/24'
 }
 
 $onpremVirtualNetwork = New-AzVirtualNetwork @vnet04
